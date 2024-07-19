@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "sedimentary",
+  "version": "${version}",
+  "name": "Sedimentary",
+  "description": "",
+  "authors": ["brewffee"],
+  "contact": {
+    "repo": "https://github.com/brewffee/Sedimentary"
+  },
+  "license": "MIT",
+  "icon": "assets/sedimentary/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "coffee.ktty.sedimentary.client.SedimentaryClient"
+    ],
+    "main": [
+      "coffee.ktty.sedimentary.Sedimentary"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
