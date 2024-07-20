@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "sedimentary:block/glazed_terracotta",
+      "y": 90
+    },
+    "facing=north": {
       "model": "sedimentary:block/glazed_terracotta"
+    },
+    "facing=south": {
+      "model": "sedimentary:block/glazed_terracotta",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sedimentary:block/glazed_terracotta",
+      "y": 270
     }
   }
 }
