@@ -11,7 +11,7 @@ import static coffee.ktty.sedimentary.Sedimentary.LOGGER;
 import static coffee.ktty.sedimentary.util.Shorthand.id;
 
 /**
- * A class responsible for registering sounds
+ * A class responsible for registering custom screen handlers
  */
 public class LocalScreenHandlers {
     public static final ScreenHandlerType<GrinderScreenHandler> GRINDER;
@@ -23,17 +23,17 @@ public class LocalScreenHandlers {
     /**
      * Registers a new screen.
      *
-     * @param factory the screen to register
-     * @param name the name of the screen
+     * @param factory the handler to register
+     * @param name the name of the screen handler
      */
     public static <T extends ScreenHandler> ScreenHandlerType<T> register(ScreenHandlerRegistry.SimpleClientHandlerFactory<T> factory, @NotNull String name) {
         return ScreenHandlerRegistry.registerSimple(id(name), factory);
     }
 
     /**
-     * Initializes the screen registry
+     * Initializes the screen handler registry
      */
     public static void initialize() {
-        LOGGER.info("[ScreenRegistry] Registering screens...");
+        LOGGER.info("[ScreenHandlerRegistry] Registering screen handlers...");
     }
 }

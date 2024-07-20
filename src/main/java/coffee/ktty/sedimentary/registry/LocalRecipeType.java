@@ -11,7 +11,7 @@ import static coffee.ktty.sedimentary.Sedimentary.LOGGER;
 import static coffee.ktty.sedimentary.util.Shorthand.id;
 
 /**
- * A class responsible for registering recipy types
+ * A class responsible for registering recipe types
  */
 public class LocalRecipeType {
 
