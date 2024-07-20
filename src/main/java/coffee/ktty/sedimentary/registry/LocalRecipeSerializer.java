@@ -21,7 +21,7 @@ public class LocalRecipeSerializer {
     public static final RecipeSerializer<GrinderRecipe> GRINDING;
 
     static {
-        GRINDING = register(GrinderRecipe::new, "grinder");
+        GRINDING = registerCookingSerializer(GrinderRecipe::new, "grinder");
     }
 
     /**
@@ -30,7 +30,7 @@ public class LocalRecipeSerializer {
      * @param name the name of the sound as defined in sounds.json
      */
     @Contract("_, _ -> !null")
-    public static <T extends AbstractCookingRecipe> CookingRecipeSerializer<T> register(CookingRecipeSerializer.RecipeFactory<T> factory, @NotNull String name) {
+    public static <T extends AbstractCookingRecipe> CookingRecipeSerializer<T> registerCookingSerializer(CookingRecipeSerializer.RecipeFactory<T> factory, @NotNull String name) {
         return Registry.register(Registries.RECIPE_SERIALIZER, id(name), new CookingRecipeSerializer<>(factory, 200));
     }
 
