@@ -39,7 +39,6 @@ public class LocalBlocks {
     public static final Block CRACKED_MOSSY_STONE_BRICKS;
     public static final Block DARK_PRISMARINE_BRICKS;
     public static final Block DRIPSTONE_BRICKS;
-    public static final Block GLAZED_TERRACOTTA;
     public static final Block MAGMA_BRICKS;
     public static final Block NETHER_LANTERN;
     public static final Block WARPED_NETHER_BRICKS;
@@ -51,17 +50,18 @@ public class LocalBlocks {
         CRACKED_MOSSY_STONE_BRICKS = register(new Block(copyFrom(Blocks.MOSSY_STONE_BRICKS)), "cracked_mossy_stone_bricks");
         DARK_PRISMARINE_BRICKS = register(new Block(copyFrom(Blocks.PRISMARINE_BRICKS)), "dark_prismarine_bricks");
         DRIPSTONE_BRICKS = register(new Block(copyFrom(Blocks.DRIPSTONE_BLOCK)), "dripstone_bricks");
-        GLAZED_TERRACOTTA = register(new GlazedTerracottaBlock(copyFrom(Blocks.BLACK_GLAZED_TERRACOTTA)), "glazed_terracotta");
         MAGMA_BRICKS = register(new MagmaBlock(copyFrom(Blocks.MAGMA_BLOCK)), "magma_bricks");
         NETHER_LANTERN = register(new Block(copyFrom(Blocks.SEA_LANTERN)), "nether_lantern");
         WARPED_NETHER_BRICKS = register(new Block(copyFrom(Blocks.RED_NETHER_BRICKS)), "warped_nether_bricks");
     }
 
     // Level 2 blocks (Weak/cobbled stones and glasses)
+    public static final Block GLAZED_TERRACOTTA;
     public static final Block SOUL_STONE;
     public static final Block SOUL_GLASS;
 
     static {
+        GLAZED_TERRACOTTA = register(new GlazedTerracottaBlock(copyFrom(Blocks.BLACK_GLAZED_TERRACOTTA)), "glazed_terracotta");
         SOUL_STONE = register(new Block(copyFrom(Blocks.NETHER_BRICKS)), "soul_stone");
         SOUL_GLASS = register(new TintedGlassBlock(copyFrom(Blocks.TINTED_GLASS)), "soul_glass");
     }

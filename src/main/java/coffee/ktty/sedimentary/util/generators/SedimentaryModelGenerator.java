@@ -25,14 +25,13 @@ public class SedimentaryModelGenerator extends FabricModelProvider {
         gen.registerSimpleCubeAll(LocalBlocks.CRACKED_MOSSY_STONE_BRICKS);
         gen.registerSimpleCubeAll(LocalBlocks.DARK_PRISMARINE_BRICKS);
         gen.registerSimpleCubeAll(LocalBlocks.DRIPSTONE_BRICKS);
-        gen.registerNorthDefaultHorizontalRotated(LocalBlocks.GLAZED_TERRACOTTA, TexturedModel.TEMPLATE_GLAZED_TERRACOTTA);
         gen.registerSimpleCubeAll(LocalBlocks.MAGMA_BRICKS);
         gen.registerSimpleCubeAll(LocalBlocks.NETHER_LANTERN);
         gen.registerSimpleCubeAll(LocalBlocks.WARPED_NETHER_BRICKS);
 
-        gen.registerSimpleCubeAll(LocalBlocks.SOUL_GLASS);
-
+        gen.registerNorthDefaultHorizontalRotated(LocalBlocks.GLAZED_TERRACOTTA, TexturedModel.TEMPLATE_GLAZED_TERRACOTTA);
         gen.registerSimpleCubeAll(LocalBlocks.SOUL_STONE);
+        gen.registerSimpleCubeAll(LocalBlocks.SOUL_GLASS);
     }
 
     @Override
