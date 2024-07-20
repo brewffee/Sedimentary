@@ -3,6 +3,8 @@ package coffee.ktty.sedimentary.registry;
 import coffee.ktty.sedimentary.blocks.GrinderBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.MagmaBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -18,11 +20,43 @@ import static coffee.ktty.sedimentary.util.Shorthand.*;
  */
 public class LocalBlocks {
 
-    // Special blocks
+    // Special blocks (Workstations and others)
     public static final Block GRINDER;
 
     static {
         GRINDER = register(new GrinderBlock(create().strength(4.0f).requiresTool().luminance(inLitState(13))), "grinder");
+    }
+
+    // Level 4 blocks (Bricks)
+    public static final Block GILDED_POLISHED_BLACKSTONE_BRICKS;
+
+    static {
+        GILDED_POLISHED_BLACKSTONE_BRICKS = register(new Block(copyFrom(Blocks.POLISHED_BLACKSTONE_BRICKS)), "gilded_polished_blackstone_bricks");
+    }
+
+    // Level 3 blocks (Bricks and stones)
+    public static final Block ANCIENT_BRICKS;
+    public static final Block CALCITE_BRICKS;
+    public static final Block CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS;
+    public static final Block CRACKED_MOSSY_STONE_BRICKS;
+    public static final Block DARK_PRISMARINE_BRICKS;
+    public static final Block DRIPSTONE_BRICKS;
+    public static final Block GLAZED_TERRACOTTA;
+    public static final Block MAGMA_BRICKS;
+    public static final Block NETHER_LANTERN;
+    public static final Block WARPED_NETHER_BRICKS;
+
+    static {
+        ANCIENT_BRICKS = registerFireproof(new Block(copyFrom(Blocks.ANCIENT_DEBRIS)), "ancient_bricks");
+        CALCITE_BRICKS = register(new Block(copyFrom(Blocks.CALCITE)), "calcite_bricks");
+        CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS = register(new Block(copyFrom(Blocks.POLISHED_BLACKSTONE_BRICKS)), "cracked_gilded_polished_blackstone_bricks");
+        CRACKED_MOSSY_STONE_BRICKS = register(new Block(copyFrom(Blocks.MOSSY_STONE_BRICKS)), "cracked_mossy_stone_bricks");
+        DARK_PRISMARINE_BRICKS = register(new Block(copyFrom(Blocks.PRISMARINE_BRICKS)), "dark_prismarine_bricks");
+        DRIPSTONE_BRICKS = register(new Block(copyFrom(Blocks.DRIPSTONE_BLOCK)), "dripstone_bricks");
+        GLAZED_TERRACOTTA = register(new Block(copyFrom(Blocks.BLACK_GLAZED_TERRACOTTA)), "glazed_terracotta");
+        MAGMA_BRICKS = register(new MagmaBlock(copyFrom(Blocks.MAGMA_BLOCK)), "magma_bricks");
+        NETHER_LANTERN = register(new Block(copyFrom(Blocks.SEA_LANTERN)), "nether_lantern");
+        WARPED_NETHER_BRICKS = register(new Block(copyFrom(Blocks.RED_NETHER_BRICKS)), "warped_nether_bricks");
     }
 
     /**
@@ -44,10 +78,12 @@ public class LocalBlocks {
      * @param path the block's name
      * @return the original {@link Block} object
      */
+    @SuppressWarnings("SameParameterValue") // Until another fireproof block is registered :P
     private static @NotNull Block registerFireproof(Block block, String path) {
         BlockItem blockItem = new BlockItem(block, new FabricItemSettings().fireproof());
         return register(block, path, blockItem);
     }
+
     /**
      * Registers a block with custom BlockItem settings
      *

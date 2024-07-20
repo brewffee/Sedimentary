@@ -14,8 +14,21 @@ public class SedimentaryModelGenerator extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(@NotNull BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerCooker(LocalBlocks.GRINDER, TexturedModel.ORIENTABLE);
+    public void generateBlockStateModels(@NotNull BlockStateModelGenerator gen) {
+        gen.registerCooker(LocalBlocks.GRINDER, TexturedModel.ORIENTABLE);
+
+        gen.registerSimpleCubeAll(LocalBlocks.GILDED_POLISHED_BLACKSTONE_BRICKS);
+
+        gen.registerSimpleCubeAll(LocalBlocks.ANCIENT_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.CALCITE_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.CRACKED_MOSSY_STONE_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.DARK_PRISMARINE_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.DRIPSTONE_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.GLAZED_TERRACOTTA);
+        gen.registerSimpleCubeAll(LocalBlocks.MAGMA_BRICKS);
+        gen.registerSimpleCubeAll(LocalBlocks.NETHER_LANTERN);
+        gen.registerSimpleCubeAll(LocalBlocks.WARPED_NETHER_BRICKS);
     }
 
     @Override

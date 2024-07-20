@@ -49,5 +49,18 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
     @Override
     public void generate() {
         dropsSelf(LocalBlocks.GRINDER);
+
+        dropsSelf(LocalBlocks.GILDED_POLISHED_BLACKSTONE_BRICKS);
+
+        dropsSelf(LocalBlocks.ANCIENT_BRICKS);
+        dropsSelf(LocalBlocks.CALCITE_BRICKS);
+        dropsSelf(LocalBlocks.CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS);
+        dropsSelf(LocalBlocks.CRACKED_MOSSY_STONE_BRICKS);
+        dropsSelf(LocalBlocks.DARK_PRISMARINE_BRICKS);
+        dropsSelf(LocalBlocks.DRIPSTONE_BRICKS);
+        dropsSelf(LocalBlocks.GLAZED_TERRACOTTA);
+        dropsSelf(LocalBlocks.MAGMA_BRICKS);
+        dropsSelf(LocalBlocks.NETHER_LANTERN);
+        dropsSelf(LocalBlocks.WARPED_NETHER_BRICKS);
     }
 }
