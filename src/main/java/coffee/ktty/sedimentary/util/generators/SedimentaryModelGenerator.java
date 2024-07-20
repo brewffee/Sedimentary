@@ -29,6 +29,10 @@ public class SedimentaryModelGenerator extends FabricModelProvider {
         gen.registerSimpleCubeAll(LocalBlocks.MAGMA_BRICKS);
         gen.registerSimpleCubeAll(LocalBlocks.NETHER_LANTERN);
         gen.registerSimpleCubeAll(LocalBlocks.WARPED_NETHER_BRICKS);
+
+        gen.registerSimpleCubeAll(LocalBlocks.SOUL_GLASS);
+
+        gen.registerSimpleCubeAll(LocalBlocks.SOUL_STONE);
     }
 
     @Override

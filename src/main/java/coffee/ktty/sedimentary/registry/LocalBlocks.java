@@ -2,10 +2,7 @@ package coffee.ktty.sedimentary.registry;
 
 import coffee.ktty.sedimentary.blocks.GrinderBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.GlazedTerracottaBlock;
-import net.minecraft.block.MagmaBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -58,6 +55,15 @@ public class LocalBlocks {
         MAGMA_BRICKS = register(new MagmaBlock(copyFrom(Blocks.MAGMA_BLOCK)), "magma_bricks");
         NETHER_LANTERN = register(new Block(copyFrom(Blocks.SEA_LANTERN)), "nether_lantern");
         WARPED_NETHER_BRICKS = register(new Block(copyFrom(Blocks.RED_NETHER_BRICKS)), "warped_nether_bricks");
+    }
+
+    // Level 2 blocks (Weak/cobbled stones and glasses)
+    public static final Block SOUL_STONE;
+    public static final Block SOUL_GLASS;
+
+    static {
+        SOUL_STONE = register(new Block(copyFrom(Blocks.NETHER_BRICKS)), "soul_stone");
+        SOUL_GLASS = register(new TintedGlassBlock(copyFrom(Blocks.TINTED_GLASS)), "soul_glass");
     }
 
     /**

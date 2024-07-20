@@ -63,5 +63,9 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
         dropsSelf(LocalBlocks.MAGMA_BRICKS);
         dropsMany(LocalBlocks.NETHER_LANTERN, Items.GLOWSTONE_DUST, 4);
         dropsSelf(LocalBlocks.WARPED_NETHER_BRICKS);
+
+        addDropWithSilkTouch(LocalBlocks.SOUL_GLASS);
+
+        dropsSelf(LocalBlocks.SOUL_STONE);
     }
 }
