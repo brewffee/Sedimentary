@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
@@ -60,7 +61,7 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
         dropsSelf(LocalBlocks.DRIPSTONE_BRICKS);
         dropsSelf(LocalBlocks.GLAZED_TERRACOTTA);
         dropsSelf(LocalBlocks.MAGMA_BRICKS);
-        dropsSelf(LocalBlocks.NETHER_LANTERN);
+        dropsMany(LocalBlocks.NETHER_LANTERN, Items.GLOWSTONE_DUST, 4);
         dropsSelf(LocalBlocks.WARPED_NETHER_BRICKS);
     }
 }
