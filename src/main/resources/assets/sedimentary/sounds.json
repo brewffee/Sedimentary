@@ -1,0 +1,8 @@
+{
+  "grinder_run": {
+    "subtitle": "subtitles.sedimentary.grinder_run",
+        "sounds": [
+      "sedimentary:block/grinder/grinder_run"
+    ]
+  }
+}

@@ -12,6 +12,9 @@
   "icon": "assets/sedimentary/icon.png",
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "coffee.ktty.sedimentary.util.generators.SedimentaryDataGenerator"
+    ],
     "client": [
       "coffee.ktty.sedimentary.client.SedimentaryClient"
     ],

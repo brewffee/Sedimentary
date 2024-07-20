@@ -1,7 +1,6 @@
 package coffee.ktty.sedimentary;
 
-import coffee.ktty.sedimentary.registry.LocalBlockEntities;
-import coffee.ktty.sedimentary.registry.LocalBlocks;
+import coffee.ktty.sedimentary.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,5 +17,9 @@ public final class Sedimentary implements ModInitializer {
 
         LocalBlocks.initialize();
         LocalBlockEntities.initialize();
+        LocalSounds.initialize();
+        LocalRecipeSerializer.initialize();
+        LocalRecipeType.initialize();
+        LocalScreenHandlers.initialize();
     }
 }
