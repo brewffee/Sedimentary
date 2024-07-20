@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sedimentary:block/gilded_polished_blackstone_bricks"
+  }
+}
