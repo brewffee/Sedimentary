@@ -1,8 +1,9 @@
 package coffee.ktty.sedimentary.registry;
 
-
 import coffee.ktty.sedimentary.screen.GrinderScreenHandler;
-import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import org.jetbrains.annotations.NotNull;
@@ -24,10 +25,12 @@ public class LocalScreenHandlers {
      * Registers a new screen.
      *
      * @param factory the handler to register
-     * @param name the name of the screen handler
+     * @param name    the name of the screen handler
+     * @return - the screen handler
      */
-    public static <T extends ScreenHandler> ScreenHandlerType<T> register(ScreenHandlerRegistry.SimpleClientHandlerFactory<T> factory, @NotNull String name) {
-        return ScreenHandlerRegistry.registerSimple(id(name), factory);
+    public static <T extends ScreenHandler> ScreenHandlerType<T> register(@NotNull ScreenHandlerType.Factory<T> factory, @NotNull String name) {
+        ScreenHandlerType<T> type = new ScreenHandlerType<>(factory, FeatureFlags.VANILLA_FEATURES);
+        return Registry.register(Registries.SCREEN_HANDLER, id(name), type);
     }
 
     /**
