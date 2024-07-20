@@ -4,6 +4,7 @@ import coffee.ktty.sedimentary.blocks.GrinderBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.GlazedTerracottaBlock;
 import net.minecraft.block.MagmaBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
@@ -53,7 +54,7 @@ public class LocalBlocks {
         CRACKED_MOSSY_STONE_BRICKS = register(new Block(copyFrom(Blocks.MOSSY_STONE_BRICKS)), "cracked_mossy_stone_bricks");
         DARK_PRISMARINE_BRICKS = register(new Block(copyFrom(Blocks.PRISMARINE_BRICKS)), "dark_prismarine_bricks");
         DRIPSTONE_BRICKS = register(new Block(copyFrom(Blocks.DRIPSTONE_BLOCK)), "dripstone_bricks");
-        GLAZED_TERRACOTTA = register(new Block(copyFrom(Blocks.BLACK_GLAZED_TERRACOTTA)), "glazed_terracotta");
+        GLAZED_TERRACOTTA = register(new GlazedTerracottaBlock(copyFrom(Blocks.BLACK_GLAZED_TERRACOTTA)), "glazed_terracotta");
         MAGMA_BRICKS = register(new MagmaBlock(copyFrom(Blocks.MAGMA_BLOCK)), "magma_bricks");
         NETHER_LANTERN = register(new Block(copyFrom(Blocks.SEA_LANTERN)), "nether_lantern");
         WARPED_NETHER_BRICKS = register(new Block(copyFrom(Blocks.RED_NETHER_BRICKS)), "warped_nether_bricks");
