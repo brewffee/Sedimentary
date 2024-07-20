@@ -1,5 +1,15 @@
 {
   "block.sedimentary.grinder": "Grinder",
   "container.sedimentary.grinder": "Grinder",
-  "subtitles.sedimentary.grinder_run": "Grinder runs"
+  "subtitles.sedimentary.grinder_run": "Grinder runs",
+  "block.sedimentary.gilded_polished_blackstone_bricks": "Gilded Polished Blackstone Bricks",
+  "block.sedimentary.ancient_bricks": "Ancient Bricks",
+  "block.sedimentary.calcite_bricks": "Calcite Bricks",
+  "block.sedimentary.cracked_gilded_polished_blackstone_bricks": "Cracked Gilded Polished Blackstone Bricks",
+  "block.sedimentary.cracked_mossy_stone_bricks": "Cracked Mossy Stone Bricks",
+  "block.sedimentary.dark_prismarine_bricks": "Dark Prismarine Bricks",
+  "block.sedimentary.dripstone_bricks": "Dripstone Bricks",
+  "block.sedimentary.magma_bricks": "Magma Bricks",
+  "block.sedimentary.nether_lantern": "Nether Lantern",
+  "block.sedimentary.warped_nether_brick": "Warped Nether Brick"
 }
