@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "sedimentary:grinder",
+    "sedimentary:gilded_polished_blackstone_bricks",
+    "sedimentary:ancient_bricks",
+    "sedimentary:calcite_bricks",
+    "sedimentary:cracked_gilded_polished_blackstone_bricks",
+    "sedimentary:cracked_mossy_stone_bricks",
+    "sedimentary:dark_prismarine_bricks",
+    "sedimentary:dripstone_bricks",
+    "sedimentary:magma_bricks",
+    "sedimentary:nether_lantern",
+    "sedimentary:warped_nether_bricks",
+    "sedimentary:glazed_terracotta",
+    "sedimentary:soul_stone",
+    "sedimentary:soul_glass"
+  ]
+}
