@@ -12,6 +12,9 @@
   "block.sedimentary.magma_bricks": "Magma Bricks",
   "block.sedimentary.nether_lantern": "Nether Lantern",
   "block.sedimentary.warped_nether_bricks": "Warped Nether Brick",
+  "block.sedimentary.cobbled_andesite": "Cobbled Andesite",
+  "block.sedimentary.cobbled_diorite" : "Cobbled Diorite",
+  "block.sedimentary.cobbled_granite": "Cobbled Granite",
   "block.sedimentary.glazed_terracotta": "Glazed Terracotta",
   "block.sedimentary.soul_stone": "Soul Stone",
   "block.sedimentary.soul_glass" : "Soul Glass"

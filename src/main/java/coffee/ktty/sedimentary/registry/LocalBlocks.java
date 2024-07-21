@@ -80,11 +80,23 @@ public class LocalBlocks {
     }
 
     // Level 2 blocks (Weak/cobbled stones and glasses)
+    public static final Block COBBLED_ANDESITE;
+    public static final Block COBBLED_DIORITE;
+    public static final Block COBBLED_GRANITE;
     public static final Block GLAZED_TERRACOTTA;
     public static final Block SOUL_STONE;
     public static final Block SOUL_GLASS;
 
     static {
+        COBBLED_ANDESITE = new SedimentaryBlockBuilder(new Block(copyFrom(Blocks.COBBLESTONE))).path("cobbled_andesite")
+                .drops(SELF).model(CUBE_ALL).tags(BlockTags.PICKAXE_MINEABLE).finish();
+
+        COBBLED_DIORITE = new SedimentaryBlockBuilder(new Block(copyFrom(Blocks.COBBLESTONE))).path("cobbled_diorite")
+                .drops(SELF).model(CUBE_ALL).tags(BlockTags.PICKAXE_MINEABLE).finish();
+
+        COBBLED_GRANITE = new SedimentaryBlockBuilder(new Block(copyFrom(Blocks.COBBLESTONE))).path("cobbled_granite")
+                .drops(SELF).model(CUBE_ALL).tags(BlockTags.PICKAXE_MINEABLE).finish();
+
         GLAZED_TERRACOTTA = new SedimentaryBlockBuilder(new GlazedTerracottaBlock(copyFrom(Blocks.RED_GLAZED_TERRACOTTA))).path("glazed_terracotta")
                 .drops(SELF).model(TERRACOTTA).tags(BlockTags.PICKAXE_MINEABLE).finish();
 
