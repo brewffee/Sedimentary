@@ -37,7 +37,7 @@ public class LocalBlocks {
     public static final Block GILDED_POLISHED_BLACKSTONE_BRICKS;
 
     static {
-        GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("gilded_polished_blackstone_bricks", Block.class, Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
+        GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("gilded_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
     }
 
@@ -53,31 +53,31 @@ public class LocalBlocks {
     public static final Block WARPED_NETHER_BRICKS;
 
     static {
-        ANCIENT_BRICKS = new SedimentaryBlock("ancient_bricks", Block.class, Blocks.ANCIENT_DEBRIS).model(CUBE_ALL)
+        ANCIENT_BRICKS = new SedimentaryBlock("ancient_bricks", Blocks.ANCIENT_DEBRIS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL).attributes(FIREPROOF).finish();
 
-        CALCITE_BRICKS = new SedimentaryBlock("calcite_bricks", Block.class, Blocks.CALCITE).model(CUBE_ALL)
+        CALCITE_BRICKS = new SedimentaryBlock("calcite_bricks", Blocks.CALCITE).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SCULK_REPLACEABLE).finish();
 
-        CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("cracked_gilded_polished_blackstone_bricks", Block.class, Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
+        CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("cracked_gilded_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        CRACKED_MOSSY_STONE_BRICKS = new SedimentaryBlock("cracked_mossy_stone_bricks", Block.class, Blocks.MOSSY_STONE_BRICKS).model(CUBE_ALL)
+        CRACKED_MOSSY_STONE_BRICKS = new SedimentaryBlock("cracked_mossy_stone_bricks", Blocks.MOSSY_STONE_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        DARK_PRISMARINE_BRICKS = new SedimentaryBlock("dark_prismarine_bricks", Block.class, Blocks.PRISMARINE_BRICKS).model(CUBE_ALL)
+        DARK_PRISMARINE_BRICKS = new SedimentaryBlock("dark_prismarine_bricks", Blocks.PRISMARINE_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        DRIPSTONE_BRICKS = new SedimentaryBlock("dripstone_bricks", Block.class, Blocks.DRIPSTONE_BLOCK).model(CUBE_ALL)
+        DRIPSTONE_BRICKS = new SedimentaryBlock("dripstone_bricks", Blocks.DRIPSTONE_BLOCK).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SCULK_REPLACEABLE).finish();
 
         MAGMA_BRICKS = new SedimentaryBlock("magma_bricks", MagmaBlock.class, Blocks.MAGMA_BLOCK).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.INFINIBURN_OVERWORLD).finish();
 
-        NETHER_LANTERN = new SedimentaryBlock("nether_lantern", Block.class, Blocks.SEA_LANTERN).model(CUBE_ALL)
+        NETHER_LANTERN = new SedimentaryBlock("nether_lantern", Blocks.SEA_LANTERN).model(CUBE_ALL)
             .customDrop(Items.GLOWSTONE_DUST, 4).tags(PICKAXE_MINEABLE).finish();
 
-        WARPED_NETHER_BRICKS = new SedimentaryBlock("warped_nether_bricks", Block.class, Blocks.RED_NETHER_BRICKS).model(CUBE_ALL)
+        WARPED_NETHER_BRICKS = new SedimentaryBlock("warped_nether_bricks", Blocks.RED_NETHER_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
     }
 
@@ -90,19 +90,19 @@ public class LocalBlocks {
     public static final Block SOUL_GLASS;
 
     static {
-        COBBLED_ANDESITE = new SedimentaryBlock("cobbled_andesite", Block.class, Blocks.COBBLESTONE).model(CUBE_ALL)
+        COBBLED_ANDESITE = new SedimentaryBlock("cobbled_andesite", Blocks.COBBLESTONE).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        COBBLED_DIORITE = new SedimentaryBlock("cobbled_diorite", Block.class, Blocks.COBBLESTONE).model(CUBE_ALL)
+        COBBLED_DIORITE = new SedimentaryBlock("cobbled_diorite", Blocks.COBBLESTONE).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        COBBLED_GRANITE = new SedimentaryBlock("cobbled_granite", Block.class, Blocks.COBBLESTONE).model(CUBE_ALL)
+        COBBLED_GRANITE = new SedimentaryBlock("cobbled_granite", Blocks.COBBLESTONE).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
         GLAZED_TERRACOTTA = new SedimentaryBlock("glazed_terracotta", GlazedTerracottaBlock.class, Blocks.RED_GLAZED_TERRACOTTA).model(TERRACOTTA)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        SOUL_STONE = new SedimentaryBlock("soul_stone", Block.class, Blocks.NETHER_BRICKS).model(CUBE_ALL)
+        SOUL_STONE = new SedimentaryBlock("soul_stone", Blocks.NETHER_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SOUL_SPEED_BLOCKS, BlockTags.SOUL_FIRE_BASE_BLOCKS, BlockTags.WITHER_SUMMON_BASE_BLOCKS).finish();
 
         SOUL_GLASS = new SedimentaryBlock("soul_glass", TintedGlassBlock.class, Blocks.TINTED_GLASS).model(CUBE_ALL)

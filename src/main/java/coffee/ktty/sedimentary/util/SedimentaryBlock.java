@@ -40,6 +40,17 @@ public class SedimentaryBlock {
      * Creates a new instance of the builder
      *
      * @param path the block's id
+     * @param parent the block to copy settings from
+     */
+    public SedimentaryBlock(String path, Block parent) {
+        this.block = newBlock(Block.class, copyFrom(parent));
+        this.path = path;
+    }
+
+    /**
+     * Creates a new instance of the builder using a custom block class
+     *
+     * @param path the block's id
      * @param blockClass the class of the block, must extend {@link Block}
      * @param parent the block to copy settings from
      */
