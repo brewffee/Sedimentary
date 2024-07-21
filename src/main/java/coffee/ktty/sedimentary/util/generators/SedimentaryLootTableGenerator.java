@@ -30,6 +30,15 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
     }
 
     /**
+     * Drops the block only when silk touch is used
+     *
+     * @param block self-explanatory
+     */
+    public void dropsSilkTouch(Block block) {
+        addDropWithSilkTouch(block);
+    }
+
+    /**
      * Drops an item instead of the block itself
      *
      * @param block the block to drop from
@@ -65,6 +74,6 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
 
         dropsSelf(LocalBlocks.GLAZED_TERRACOTTA);
         dropsSelf(LocalBlocks.SOUL_STONE);
-        addDropWithSilkTouch(LocalBlocks.SOUL_GLASS);
+        dropsSilkTouch(LocalBlocks.SOUL_GLASS);
     }
 }
