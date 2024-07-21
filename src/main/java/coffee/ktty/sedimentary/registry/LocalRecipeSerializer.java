@@ -14,7 +14,7 @@ import static coffee.ktty.sedimentary.Sedimentary.LOGGER;
 import static coffee.ktty.sedimentary.util.Shorthand.id;
 
 /**
- * A class responsible for registering recipe types
+ * A class responsible for registering recipe serializers
  */
 public class LocalRecipeSerializer {
 
@@ -25,9 +25,10 @@ public class LocalRecipeSerializer {
     }
 
     /**
-     * Registers a new sound.
+     * Registers a new cooking recipe serializer
      *
-     * @param name the name of the sound as defined in sounds.json
+     * @param factory the new serializer
+     * @param name its name
      */
     @Contract("_, _ -> !null")
     public static <T extends AbstractCookingRecipe> CookingRecipeSerializer<T> registerCookingSerializer(CookingRecipeSerializer.RecipeFactory<T> factory, @NotNull String name) {
@@ -35,7 +36,7 @@ public class LocalRecipeSerializer {
     }
 
     /**
-     * Initializes the recipe registry
+     * Initializes the recipe serializer registry
      */
     public static void initialize() {
         LOGGER.info("[RecipeSerializerRegistry] Registering recipe serializer...");
