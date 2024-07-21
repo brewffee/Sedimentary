@@ -1,7 +1,7 @@
 package coffee.ktty.sedimentary.util.generators;
 
 import coffee.ktty.sedimentary.registry.LocalBlocks;
-import coffee.ktty.sedimentary.util.SedimentaryBlockBuilder;
+import coffee.ktty.sedimentary.util.SedimentaryBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -41,7 +41,7 @@ public class SedimentaryLootTableGenerator extends FabricBlockLootTableProvider 
      */
     @Override
     public void generate() {
-        for (SedimentaryBlockBuilder builder: LocalBlocks.blocks) {
+        for (SedimentaryBlock builder: LocalBlocks.blocks) {
             if (builder.getLoot() != null) createDrop(builder.getBlock(), builder.getLoot(), builder.getLootAmount(), builder.isSilkTouchOnly());
         }
     }

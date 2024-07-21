@@ -48,7 +48,7 @@ public final class Shorthand {
      * @return the block settings object
      */
     @Contract(value = " -> new", pure = true)
-    public static AbstractBlock.@NotNull Settings create() {
+    public static @NotNull FabricBlockSettings create() {
         return FabricBlockSettings.create();
     }
 
