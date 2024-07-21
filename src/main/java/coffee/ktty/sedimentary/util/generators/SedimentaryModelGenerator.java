@@ -1,6 +1,7 @@
 package coffee.ktty.sedimentary.util.generators;
 
 import coffee.ktty.sedimentary.registry.LocalBlocks;
+import coffee.ktty.sedimentary.util.SedimentaryBlockBuilder;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -15,23 +16,13 @@ public class SedimentaryModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(@NotNull BlockStateModelGenerator gen) {
-        gen.registerCooker(LocalBlocks.GRINDER, TexturedModel.ORIENTABLE);
-
-        gen.registerSimpleCubeAll(LocalBlocks.GILDED_POLISHED_BLACKSTONE_BRICKS);
-
-        gen.registerSimpleCubeAll(LocalBlocks.ANCIENT_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.CALCITE_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.CRACKED_MOSSY_STONE_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.DARK_PRISMARINE_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.DRIPSTONE_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.MAGMA_BRICKS);
-        gen.registerSimpleCubeAll(LocalBlocks.NETHER_LANTERN);
-        gen.registerSimpleCubeAll(LocalBlocks.WARPED_NETHER_BRICKS);
-
-        gen.registerNorthDefaultHorizontalRotated(LocalBlocks.GLAZED_TERRACOTTA, TexturedModel.TEMPLATE_GLAZED_TERRACOTTA);
-        gen.registerSimpleCubeAll(LocalBlocks.SOUL_STONE);
-        gen.registerSimpleCubeAll(LocalBlocks.SOUL_GLASS);
+        for (SedimentaryBlockBuilder builder: LocalBlocks.blocks) {
+            switch (builder.getModelType()) {
+                case COOKER -> gen.registerCooker(builder.getBlock(), TexturedModel.ORIENTABLE);
+                case TERRACOTTA -> gen.registerNorthDefaultHorizontalRotated(builder.getBlock(), TexturedModel.TEMPLATE_GLAZED_TERRACOTTA);
+                case CUBE_ALL -> gen.registerSimpleCubeAll(builder.getBlock());
+            }
+        }
     }
 
     @Override
