@@ -85,7 +85,10 @@ public class LocalBlocks {
     public static final Block COBBLED_ANDESITE;
     public static final Block COBBLED_DIORITE;
     public static final Block COBBLED_GRANITE;
+    public static final Block COBBLED_PURPUR;
+    public static final Block CRACKED_BRICKS;
     public static final Block GLAZED_TERRACOTTA;
+    public static final Block QUARTZ_ROCK;
     public static final Block SOUL_STONE;
     public static final Block SOUL_GLASS;
 
@@ -99,7 +102,16 @@ public class LocalBlocks {
         COBBLED_GRANITE = new SedimentaryBlock("cobbled_granite", Blocks.COBBLESTONE).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
+        COBBLED_PURPUR = new SedimentaryBlock("cobbled_purpur", Blocks.COBBLESTONE).model(CUBE_ALL)
+            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+
+        CRACKED_BRICKS = new SedimentaryBlock("cracked_bricks", Blocks.BRICKS).model(CUBE_ALL)
+            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+
         GLAZED_TERRACOTTA = new SedimentaryBlock("glazed_terracotta", GlazedTerracottaBlock.class, Blocks.RED_GLAZED_TERRACOTTA).model(TERRACOTTA)
+            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+
+        QUARTZ_ROCK = new SedimentaryBlock("quartz_rock", Blocks.QUARTZ_BLOCK).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
         SOUL_STONE = new SedimentaryBlock("soul_stone", Blocks.NETHER_BRICKS).model(CUBE_ALL)
