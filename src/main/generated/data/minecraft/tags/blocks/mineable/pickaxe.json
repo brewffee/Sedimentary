@@ -10,7 +10,6 @@
     "sedimentary:dark_prismarine_bricks",
     "sedimentary:dripstone_bricks",
     "sedimentary:magma_bricks",
-    "sedimentary:nether_lantern",
     "sedimentary:warped_nether_bricks",
     "sedimentary:cobbled_andesite",
     "sedimentary:cobbled_diorite",
@@ -19,7 +18,6 @@
     "sedimentary:cracked_bricks",
     "sedimentary:glazed_terracotta",
     "sedimentary:quartz_rock",
-    "sedimentary:soul_stone",
-    "sedimentary:soul_glass"
+    "sedimentary:soul_stone"
   ]
 }
