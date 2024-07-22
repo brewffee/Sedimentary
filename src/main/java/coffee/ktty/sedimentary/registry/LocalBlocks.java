@@ -4,7 +4,6 @@ import coffee.ktty.sedimentary.blocks.GrinderBlock;
 import coffee.ktty.sedimentary.util.SedimentaryBlock;
 import net.minecraft.block.*;
 import net.minecraft.item.Items;
-import net.minecraft.registry.tag.BlockTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +12,9 @@ import static coffee.ktty.sedimentary.Sedimentary.LOGGER;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryAttribute.FIREPROOF;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryDropType.NOTHING;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryDropType.SELF;
+import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryModelType.TERRACOTTA;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryModelType.*;
-import static net.minecraft.registry.tag.BlockTags.NEEDS_DIAMOND_TOOL;
-import static net.minecraft.registry.tag.BlockTags.PICKAXE_MINEABLE;
+import static net.minecraft.registry.tag.BlockTags.*;
 
 /**
  * A class responsible for registering blocks and their settings.
@@ -57,25 +56,25 @@ public class LocalBlocks {
             .drops(SELF).tags(PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL).attributes(FIREPROOF).finish();
 
         CALCITE_BRICKS = new SedimentaryBlock("calcite_bricks", Blocks.CALCITE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SCULK_REPLACEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).finish();
 
         CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("cracked_gilded_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, GUARDED_BY_PIGLINS).finish();
 
         CRACKED_MOSSY_STONE_BRICKS = new SedimentaryBlock("cracked_mossy_stone_bricks", Blocks.MOSSY_STONE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, STONE_BRICKS).finish();
 
         DARK_PRISMARINE_BRICKS = new SedimentaryBlock("dark_prismarine_bricks", Blocks.PRISMARINE_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
         DRIPSTONE_BRICKS = new SedimentaryBlock("dripstone_bricks", Blocks.DRIPSTONE_BLOCK).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SCULK_REPLACEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).finish();
 
         MAGMA_BRICKS = new SedimentaryBlock("magma_bricks", MagmaBlock.class, Blocks.MAGMA_BLOCK).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.INFINIBURN_OVERWORLD).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, INFINIBURN_OVERWORLD).finish();
 
         NETHER_LANTERN = new SedimentaryBlock("nether_lantern", Blocks.SEA_LANTERN).model(CUBE_ALL)
-            .customDrop(Items.GLOWSTONE_DUST, 4).tags(PICKAXE_MINEABLE).finish();
+            .customDrop(Items.GLOWSTONE_DUST, 4).finish();
 
         WARPED_NETHER_BRICKS = new SedimentaryBlock("warped_nether_bricks", Blocks.RED_NETHER_BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
@@ -108,17 +107,17 @@ public class LocalBlocks {
         CRACKED_BRICKS = new SedimentaryBlock("cracked_bricks", Blocks.BRICKS).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
-        GLAZED_TERRACOTTA = new SedimentaryBlock("glazed_terracotta", GlazedTerracottaBlock.class, Blocks.RED_GLAZED_TERRACOTTA).model(TERRACOTTA)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+        GLAZED_TERRACOTTA = new SedimentaryBlock("glazed_terracotta", GlazedTerracottaBlock.class, Blocks.RED_GLAZED_TERRACOTTA)
+                .model(TERRACOTTA).drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
         QUARTZ_ROCK = new SedimentaryBlock("quartz_rock", Blocks.QUARTZ_BLOCK).model(CUBE_ALL)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
         SOUL_STONE = new SedimentaryBlock("soul_stone", Blocks.NETHER_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, BlockTags.SOUL_SPEED_BLOCKS, BlockTags.SOUL_FIRE_BASE_BLOCKS, BlockTags.WITHER_SUMMON_BASE_BLOCKS).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).finish();
 
         SOUL_GLASS = new SedimentaryBlock("soul_glass", TintedGlassBlock.class, Blocks.TINTED_GLASS).model(CUBE_ALL)
-            .drops(NOTHING).tags(PICKAXE_MINEABLE, BlockTags.SOUL_SPEED_BLOCKS, BlockTags.SOUL_FIRE_BASE_BLOCKS, BlockTags.WITHER_SUMMON_BASE_BLOCKS).finish();
+            .drops(NOTHING).tags(IMPERMEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).finish();
     }
 
     /**
