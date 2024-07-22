@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "sedimentary:block/powder_snow"
+      },
+      {
+        "model": "sedimentary:block/powder_snow_mirrored"
+      },
+      {
+        "model": "sedimentary:block/powder_snow",
+        "y": 180
+      },
+      {
+        "model": "sedimentary:block/powder_snow_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

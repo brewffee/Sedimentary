@@ -3,7 +3,12 @@ package coffee.ktty.sedimentary.registry;
 import coffee.ktty.sedimentary.blocks.GrinderBlock;
 import coffee.ktty.sedimentary.util.SedimentaryBlock;
 import net.minecraft.block.*;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +30,22 @@ public class LocalBlocks {
 
     // Special blocks (Workstations and others)
     public static final Block GRINDER;
+    public static final Block POWDER_SNOW; // We have to duplicate powder snow to allow stacking
+
+    // Short class for powder snow to override the placing functionality
+    public static class CustomPowderSnowBlock extends PowderSnowBlock {
+        public CustomPowderSnowBlock(Settings settings) { super(settings); }
+        public void onPlaced(@NotNull World w, BlockPos p, BlockState s, LivingEntity e, ItemStack i) {
+            w.setBlockState(p, Blocks.POWDER_SNOW.getDefaultState()); // Place minecraft:powder_snow
+        }
+    }
 
     static {
         GRINDER = new SedimentaryBlock("grinder", GrinderBlock.class, Blocks.FURNACE).model(COOKER)
             .drops(SELF).tags(PICKAXE_MINEABLE).finish();
 
+        POWDER_SNOW = new SedimentaryBlock("powder_snow", CustomPowderSnowBlock.class, Blocks.POWDER_SNOW).model(CUBE_ALL)
+                .drops(NOTHING).tags(INSIDE_STEP_SOUND_BLOCKS, AZALEA_GROWS_ON, AZALEA_ROOT_REPLACEABLE, SNOW).finish();
     }
 
     // Level 4 blocks (Bricks)
