@@ -9,9 +9,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.Identifier;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.function.ToIntFunction;
 
 import static coffee.ktty.sedimentary.Sedimentary.ID;
@@ -71,5 +73,24 @@ public final class Shorthand {
     @Contract(pure = true)
     public static @NotNull ToIntFunction<BlockState> inLitState(int level) {
         return Blocks.createLightLevelFromLitBlockState(level);
+    }
+
+    /**
+     * Create a translation value from an item's ID (EN_US only)
+     *
+     * @param path the item id
+     * @return the translated string
+     */
+    @Contract("_ -> new")
+    public static @NotNull String makeTranslation(@NotNull String path) {
+        StringBuilder name = new StringBuilder();
+        String[] words = path.replace("_", " ").split(" ");
+        for (String word: words) {
+            name.append(StringUtils.capitalize(word));
+            if (!Objects.equals(words[words.length - 1], word)) {
+                name.append(" ");
+            }
+        }
+        return name.toString();
     }
 }

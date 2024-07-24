@@ -9,7 +9,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.TagKey;
-import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,10 +16,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
-import static coffee.ktty.sedimentary.util.Shorthand.copyFrom;
-import static coffee.ktty.sedimentary.util.Shorthand.id;
+import static coffee.ktty.sedimentary.util.Shorthand.*;
 
 /**
  * A builder for quickly registering blocks
@@ -136,19 +133,6 @@ public class SedimentaryBlock {
 
     @Contract(pure = true)
     public String getTranslated() { return translatedName; }
-
-    @Contract("_ -> new")
-    private @NotNull String makeTranslation(@NotNull String path) {
-        StringBuilder name = new StringBuilder();
-        String[] words = path.replace("_", " ").split(" ");
-        for (String word: words) {
-            name.append(StringUtils.capitalize(word));
-            if (!Objects.equals(words[words.length - 1], word)) {
-                name.append(" ");
-            }
-        }
-        return name.toString();
-    }
 
     /**
      * Sets a custom loot drop for this block
