@@ -16,5 +16,6 @@ public class SedimentaryDataGenerator implements DataGeneratorEntrypoint {
         datapack.addProvider(SedimentaryModelGenerator::new);
         datapack.addProvider(SedimentaryRecipeGenerator::new);
         datapack.addProvider(SedimentaryTagGenerator::new);
+        datapack.addProvider(SedimentaryLanguageProvider::new);
     }
 }

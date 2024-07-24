@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.TagKey;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,6 +17,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static coffee.ktty.sedimentary.util.Shorthand.copyFrom;
 import static coffee.ktty.sedimentary.util.Shorthand.id;
@@ -26,13 +28,14 @@ import static coffee.ktty.sedimentary.util.Shorthand.id;
 public class SedimentaryBlock {
     private final Block block;
     private final String path;
+    private final String translatedName;
 
     private @NotNull SedimentaryDropType lootType = SedimentaryDropType.NOTHING;
     private Item loot;
     private int lootAmount = 1;
     private boolean silkTouchOnly = false;
 
-    private SedimentaryBlock.SedimentaryModelType modelType = SedimentaryModelType.CUBE_ALL;
+    private SedimentaryModelType modelType = SedimentaryModelType.CUBE_ALL;
     private List<TagKey<Block>> tags = List.of();
     private List<SedimentaryAttribute> attrs = List.of();
 
@@ -42,9 +45,10 @@ public class SedimentaryBlock {
      * @param path the block's id
      * @param parent the block to copy settings from
      */
-    public SedimentaryBlock(String path, Block parent) {
+    public SedimentaryBlock(@NotNull String path, Block parent) {
         this.block = newBlock(Block.class, copyFrom(parent));
         this.path = path;
+        this.translatedName = makeTranslation(path);
     }
 
     /**
@@ -54,9 +58,10 @@ public class SedimentaryBlock {
      * @param blockClass the class of the block, must extend {@link Block}
      * @param parent the block to copy settings from
      */
-    public <T extends Block> SedimentaryBlock(String path, @NotNull Class<T>  blockClass, Block parent) {
+    public <T extends Block> SedimentaryBlock(@NotNull String path, @NotNull Class<T>  blockClass, Block parent) {
         this.block = newBlock(blockClass, copyFrom(parent));
         this.path = path;
+        this.translatedName = makeTranslation(path);
     }
 
     /**
@@ -66,9 +71,23 @@ public class SedimentaryBlock {
      * @param blockClass the class of the block, must extend {@link Block}
      * @param settings the settings object
      */
-    public <T extends Block> SedimentaryBlock(String path, @NotNull Class<T> blockClass, AbstractBlock.Settings settings) {
+    public <T extends Block> SedimentaryBlock(@NotNull String path, @NotNull Class<T> blockClass, AbstractBlock.Settings settings) {
         this.block = newBlock(blockClass, settings);
         this.path = path;
+        this.translatedName = makeTranslation(path);
+    }
+
+    /**
+     * Creates a new instance of the builder with custom settings
+     *
+     * @param path the block's id
+     * @param blockClass the class of the block, must extend {@link Block}
+     * @param settings the settings object
+     */
+    public <T extends Block> SedimentaryBlock(String translatedName, @NotNull String path, @NotNull Class<T> blockClass, AbstractBlock.Settings settings) {
+        this.block = newBlock(blockClass, settings);
+        this.path = path;
+        this.translatedName = translatedName;
     }
 
     private static @NotNull <T extends Block> Constructor<T> getBlockConstructor(@NotNull Class<T> blockClass) {
@@ -114,6 +133,22 @@ public class SedimentaryBlock {
 
     @Contract(pure = true)
     public List<TagKey<Block>> getTags() { return tags; }
+
+    @Contract(pure = true)
+    public String getTranslated() { return translatedName; }
+
+    @Contract("_ -> new")
+    private @NotNull String makeTranslation(@NotNull String path) {
+        StringBuilder name = new StringBuilder();
+        String[] words = path.replace("_", " ").split(" ");
+        for (String word: words) {
+            name.append(StringUtils.capitalize(word));
+            if (!Objects.equals(words[words.length - 1], word)) {
+                name.append(" ");
+            }
+        }
+        return name.toString();
+    }
 
     /**
      * Sets a custom loot drop for this block
