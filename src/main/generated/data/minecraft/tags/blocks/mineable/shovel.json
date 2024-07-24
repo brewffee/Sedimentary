@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "sedimentary:crushed_andesite",
     "sedimentary:crushed_diorite",
     "sedimentary:crushed_granite"
   ]
