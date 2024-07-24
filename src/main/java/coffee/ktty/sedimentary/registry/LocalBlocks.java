@@ -136,9 +136,17 @@ public class LocalBlocks {
             .drops(NOTHING).tags(IMPERMEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).finish();
     }
 
-    /**
-     * Initializes the block registry
-     */
+    // Level 1 blocks (Sediments)
+    public static final Block CRUSHED_GRANITE;
+
+    static {
+        CRUSHED_GRANITE = new SedimentaryBlock("crushed_granite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+    }
+
+        /**
+         * Initializes the block registry
+         */
     public static void initialize() {
         LOGGER.info("[BlockRegistry] Registering blocks...");
     }

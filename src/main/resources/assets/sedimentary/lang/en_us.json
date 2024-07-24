@@ -21,5 +21,6 @@
   "block.sedimentary.glazed_terracotta": "Glazed Terracotta",
   "block.sedimentary.quartz_rock": "Quartz Rock",
   "block.sedimentary.soul_stone": "Soul Stone",
-  "block.sedimentary.soul_glass" : "Soul Glass"
+  "block.sedimentary.soul_glass" : "Soul Glass",
+  "block.sedimentary.crushed_granite" : "Crushed Granite"
 }
