@@ -139,6 +139,7 @@ public class LocalBlocks {
     // Level 1 blocks (Sediments)
     public static final Block CRUSHED_ANDESITE;
     public static final Block CRUSHED_DIORITE;
+    public static final Block CRUSHED_DEEPSLATE;
     public static final Block CRUSHED_GRANITE;
 
     static {
@@ -146,6 +147,9 @@ public class LocalBlocks {
                 .drops(SELF).tags(SHOVEL_MINEABLE).finish();
 
         CRUSHED_DIORITE = new SedimentaryBlock("crushed_diorite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+
+        CRUSHED_DEEPSLATE = new SedimentaryBlock("crushed_deepslate", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
                 .drops(SELF).tags(SHOVEL_MINEABLE).finish();
 
         CRUSHED_GRANITE = new SedimentaryBlock("crushed_granite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)

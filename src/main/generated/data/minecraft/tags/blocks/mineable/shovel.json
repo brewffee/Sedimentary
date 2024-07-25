@@ -3,6 +3,7 @@
   "values": [
     "sedimentary:crushed_andesite",
     "sedimentary:crushed_diorite",
+    "sedimentary:crushed_deepslate",
     "sedimentary:crushed_granite"
   ]
 }
