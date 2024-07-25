@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "item": "minecraft:blast_furnace"
+    },
+    "g": {
+      "item": "minecraft:grindstone"
+    },
+    "s": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "bgb",
+    "sfs"
+  ],
+  "result": {
+    "item": "sedimentary:grinder"
+  },
+  "show_notification": true
+}
