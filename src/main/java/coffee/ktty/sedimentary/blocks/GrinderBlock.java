@@ -61,7 +61,9 @@ public class GrinderBlock extends AbstractFurnaceBlock {
         double y = pos.getY();
         double z = pos.getZ() + 0.5;
 
-        world.addParticle(ParticleTypes.CRIT, x, y + 1.0, z, 0.0, 1.5, 0.0);
+        int dir = random.nextFloat() < 0.5 ? -1 : 1;
+
+        world.addParticle(ParticleTypes.CRIT, x, y + 1.0, z, dir * random.nextFloat() / 2.0f, 2.0f, dir * random.nextFloat() / 2.0f);
 
         if (random.nextDouble() < 0.8) {
             world.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y + 1.0, z, 0.0, 0.025f, 0.0);
