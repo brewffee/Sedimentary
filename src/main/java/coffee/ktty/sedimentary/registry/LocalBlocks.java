@@ -141,6 +141,7 @@ public class LocalBlocks {
     public static final Block CRUSHED_DIORITE;
     public static final Block CRUSHED_DEEPSLATE;
     public static final Block CRUSHED_GRANITE;
+    public static final Block RUBBLE;
 
     static {
         CRUSHED_ANDESITE = new SedimentaryBlock("crushed_andesite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
@@ -153,6 +154,9 @@ public class LocalBlocks {
                 .drops(SELF).tags(SHOVEL_MINEABLE).finish();
 
         CRUSHED_GRANITE = new SedimentaryBlock("crushed_granite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+
+        RUBBLE = new SedimentaryBlock("rubble", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
                 .drops(SELF).tags(SHOVEL_MINEABLE).finish();
     }
 
