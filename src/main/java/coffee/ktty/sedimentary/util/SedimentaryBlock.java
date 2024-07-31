@@ -4,11 +4,13 @@ import coffee.ktty.sedimentary.registry.LocalBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.DyeColor;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,14 +25,18 @@ import static coffee.ktty.sedimentary.util.Shorthand.*;
  * A builder for quickly registering blocks
  */
 public class SedimentaryBlock {
-    private final Block block;
+    private final Class<? extends Block> blockClass;
+    private final AbstractBlock.Settings settings;
     private final String path;
     private final String translatedName;
 
     private @NotNull SedimentaryDropType lootType = SedimentaryDropType.NOTHING;
+    private Block block;
     private Item loot;
     private int lootAmount = 1;
     private boolean silkTouchOnly = false;
+    private MapColor mapColor;
+    private float strength = 0;
 
     private SedimentaryModelType modelType = SedimentaryModelType.CUBE_ALL;
     private List<TagKey<Block>> tags = List.of();
@@ -43,7 +49,8 @@ public class SedimentaryBlock {
      * @param parent the block to copy settings from
      */
     public SedimentaryBlock(@NotNull String path, Block parent) {
-        this.block = newBlock(Block.class, copyFrom(parent));
+        this.blockClass = Block.class;
+        this.settings = copyFrom(parent);
         this.path = path;
         this.translatedName = makeTranslation(path);
     }
@@ -56,7 +63,8 @@ public class SedimentaryBlock {
      * @param parent the block to copy settings from
      */
     public <T extends Block> SedimentaryBlock(@NotNull String path, @NotNull Class<T>  blockClass, Block parent) {
-        this.block = newBlock(blockClass, copyFrom(parent));
+        this.blockClass = blockClass;
+        this.settings = copyFrom(parent);
         this.path = path;
         this.translatedName = makeTranslation(path);
     }
@@ -69,7 +77,8 @@ public class SedimentaryBlock {
      * @param settings the settings object
      */
     public <T extends Block> SedimentaryBlock(@NotNull String path, @NotNull Class<T> blockClass, AbstractBlock.Settings settings) {
-        this.block = newBlock(blockClass, settings);
+        this.blockClass = blockClass;
+        this.settings = settings;
         this.path = path;
         this.translatedName = makeTranslation(path);
     }
@@ -82,7 +91,8 @@ public class SedimentaryBlock {
      * @param settings the settings object
      */
     public <T extends Block> SedimentaryBlock(String translatedName, @NotNull String path, @NotNull Class<T> blockClass, AbstractBlock.Settings settings) {
-        this.block = newBlock(blockClass, settings);
+        this.blockClass = blockClass;
+        this.settings = settings;
         this.path = path;
         this.translatedName = translatedName;
     }
@@ -203,11 +213,54 @@ public class SedimentaryBlock {
     }
 
     /**
+     * Sets the map color for this block
+     *
+     * @param color The color to appear on the map
+     *
+     */
+    @Contract(value = "_ -> this", mutates = "this")
+    public SedimentaryBlock mapColor(@NotNull MapColor color) {
+        this.mapColor = color;
+        return this;
+    }
+
+    /**
+     * Sets the map color for this block using a dye color
+     *
+     * @param color The color to appear on the map
+     *
+     */
+    @Contract(value = "_ -> this", mutates = "this")
+    public SedimentaryBlock mapColor(@NotNull DyeColor color) {
+        this.mapColor = color.getMapColor();
+        return this;
+    }
+
+    /**
+     * Sets the strength of this block
+     *
+     * @param value the strength of the block
+     *
+     */
+    @Contract(value = "_ -> this", mutates = "this")
+    public SedimentaryBlock strength(float value) {
+        this.strength = 0;
+        return this;
+    }
+
+    /**
      * Finishes the build process and registers the block in Minecraft to be used by SedimentaryDataGenerator
      *
      */
     @Contract(pure = true)
     public Block finish() {
+        // Add default Minecraft block settings
+        if (this.mapColor != null) this.settings.mapColor(this.mapColor);
+        if (this.strength != 0) this.settings.strength(this.strength);
+
+        // Create the block
+        this.block = newBlock(this.blockClass, this.settings);
+
         LocalBlocks.blocks.add(this); // This new object will be accessed later by another function
 
         // Register the block with Minecraft

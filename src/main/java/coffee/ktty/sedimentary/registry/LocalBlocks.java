@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +16,7 @@ import java.util.List;
 
 import static coffee.ktty.sedimentary.Sedimentary.LOGGER;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryAttribute.FIREPROOF;
-import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryDropType.NOTHING;
-import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryDropType.SELF;
+import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryDropType.*;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryModelType.TERRACOTTA;
 import static coffee.ktty.sedimentary.util.SedimentaryBlock.SedimentaryModelType.*;
 import static net.minecraft.registry.tag.BlockTags.*;
@@ -42,10 +42,10 @@ public class LocalBlocks {
 
     static {
         GRINDER = new SedimentaryBlock("grinder", GrinderBlock.class, Blocks.FURNACE).model(COOKER)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.GRAY).finish();
 
         POWDER_SNOW = new SedimentaryBlock("powder_snow", CustomPowderSnowBlock.class, Blocks.POWDER_SNOW).model(CUBE_ALL)
-                .drops(NOTHING).tags(INSIDE_STEP_SOUND_BLOCKS, AZALEA_GROWS_ON, AZALEA_ROOT_REPLACEABLE, SNOW).finish();
+            .drops(NOTHING).tags(INSIDE_STEP_SOUND_BLOCKS, AZALEA_GROWS_ON, AZALEA_ROOT_REPLACEABLE, SNOW).mapColor(MapColor.WHITE).finish();
     }
 
     // Level 4 blocks (Bricks)
@@ -53,7 +53,7 @@ public class LocalBlocks {
 
     static {
         GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("gilded_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.BLACK).finish();
     }
 
     // Level 3 blocks (Bricks and stones)
@@ -69,31 +69,31 @@ public class LocalBlocks {
 
     static {
         ANCIENT_BRICKS = new SedimentaryBlock("ancient_bricks", Blocks.ANCIENT_DEBRIS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL).attributes(FIREPROOF).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, NEEDS_DIAMOND_TOOL).attributes(FIREPROOF).mapColor(MapColor.BLACK).finish();
 
         CALCITE_BRICKS = new SedimentaryBlock("calcite_bricks", Blocks.CALCITE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).mapColor(MapColor.TERRACOTTA_WHITE).finish();
 
         CRACKED_GILDED_POLISHED_BLACKSTONE_BRICKS = new SedimentaryBlock("cracked_gilded_polished_blackstone_bricks", Blocks.POLISHED_BLACKSTONE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, GUARDED_BY_PIGLINS).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, GUARDED_BY_PIGLINS).mapColor(MapColor.BLACK).finish();
 
         CRACKED_MOSSY_STONE_BRICKS = new SedimentaryBlock("cracked_mossy_stone_bricks", Blocks.MOSSY_STONE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, STONE_BRICKS).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, STONE_BRICKS).mapColor(MapColor.STONE_GRAY).finish();
 
         DARK_PRISMARINE_BRICKS = new SedimentaryBlock("dark_prismarine_bricks", Blocks.PRISMARINE_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.DIAMOND_BLUE).finish();
 
         DRIPSTONE_BRICKS = new SedimentaryBlock("dripstone_bricks", Blocks.DRIPSTONE_BLOCK).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, SCULK_REPLACEABLE).mapColor(MapColor.TERRACOTTA_BROWN).finish();
 
         MAGMA_BRICKS = new SedimentaryBlock("magma_bricks", MagmaBlock.class, Blocks.MAGMA_BLOCK).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, INFINIBURN_OVERWORLD).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE, INFINIBURN_OVERWORLD).mapColor(MapColor.DARK_RED).finish();
 
         NETHER_LANTERN = new SedimentaryBlock("nether_lantern", Blocks.SEA_LANTERN).model(CUBE_ALL)
-            .customDrop(Items.GLOWSTONE_DUST, 4).finish();
+            .customDrop(Items.GLOWSTONE_DUST, 4).mapColor(MapColor.PALE_YELLOW).finish();
 
         WARPED_NETHER_BRICKS = new SedimentaryBlock("warped_nether_bricks", Blocks.RED_NETHER_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.BRIGHT_TEAL).finish();
     }
 
     // Level 2 blocks (Weak/cobbled stones and glasses)
@@ -109,31 +109,31 @@ public class LocalBlocks {
 
     static {
         COBBLED_ANDESITE = new SedimentaryBlock("cobbled_andesite", Blocks.COBBLESTONE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.STONE_GRAY).finish();
 
         COBBLED_DIORITE = new SedimentaryBlock("cobbled_diorite", Blocks.COBBLESTONE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
 
         COBBLED_GRANITE = new SedimentaryBlock("cobbled_granite", Blocks.COBBLESTONE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.DIRT_BROWN).finish();
 
         COBBLED_PURPUR = new SedimentaryBlock("cobbled_purpur", Blocks.COBBLESTONE).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.MAGENTA).finish();
 
         CRACKED_BRICKS = new SedimentaryBlock("cracked_bricks", Blocks.BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.RED).finish();
 
         GLAZED_TERRACOTTA = new SedimentaryBlock("glazed_terracotta", GlazedTerracottaBlock.class, Blocks.RED_GLAZED_TERRACOTTA)
-                .model(TERRACOTTA).drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .model(TERRACOTTA).drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.ORANGE).finish();
 
         QUARTZ_ROCK = new SedimentaryBlock("quartz_rock", Blocks.QUARTZ_BLOCK).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE).finish();
+            .drops(SELF).tags(PICKAXE_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
 
-        SOUL_STONE = new SedimentaryBlock("soul_stone", Blocks.NETHER_BRICKS).model(CUBE_ALL)
-            .drops(SELF).tags(PICKAXE_MINEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).finish();
+        SOUL_STONE = new SedimentaryBlock("soul_stone", Blocks.NETHER_BRICKS).model(CUBE_ALL).drops(SELF)
+            .tags(PICKAXE_MINEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).mapColor(MapColor.BROWN).finish();
 
-        SOUL_GLASS = new SedimentaryBlock("soul_glass", TintedGlassBlock.class, Blocks.TINTED_GLASS).model(CUBE_ALL)
-            .drops(NOTHING).tags(IMPERMEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).finish();
+        SOUL_GLASS = new SedimentaryBlock("soul_glass", TintedGlassBlock.class, Blocks.TINTED_GLASS).model(CUBE_ALL).drops(SILK_TOUCH_ONLY)
+            .tags(IMPERMEABLE, SOUL_SPEED_BLOCKS, SOUL_FIRE_BASE_BLOCKS, WITHER_SUMMON_BASE_BLOCKS).mapColor(MapColor.BROWN).finish();
     }
 
     // Level 1 blocks (Sediments)
@@ -148,28 +148,28 @@ public class LocalBlocks {
 
     static {
         CRUSHED_ANDESITE = new SedimentaryBlock("crushed_andesite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.STONE_GRAY).finish();
 
         CRUSHED_DIORITE = new SedimentaryBlock("crushed_diorite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
 
         CRUSHED_DEEPSLATE = new SedimentaryBlock("crushed_deepslate", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DEEPSLATE_GRAY).finish();
 
         CRUSHED_GRANITE = new SedimentaryBlock("crushed_granite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIRT_BROWN).finish();
 
         DARK_PRISMARINE_SUBSTRATE = new SedimentaryBlock("dark_prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIAMOND_BLUE).finish();
 
         PRISMARINE_SUBSTRATE = new SedimentaryBlock("prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.CYAN).finish();
 
         CRIMSON_SAND = new SedimentaryBlock("crimson_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.RED).finish();
 
         RUBBLE = new SedimentaryBlock("rubble", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).finish();
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.RED).finish();
     }
 
         /**
