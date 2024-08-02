@@ -145,36 +145,40 @@ public class LocalBlocks {
     public static final Block DARK_PRISMARINE_SUBSTRATE;
     public static final Block PRISMARINE_SUBSTRATE;
     public static final Block RUBBLE;
+    public static final Block WARPED_SAND;
 
     static {
         CRUSHED_ANDESITE = new SedimentaryBlock("crushed_andesite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.STONE_GRAY).finish();
 
         CRUSHED_DIORITE = new SedimentaryBlock("crushed_diorite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
 
         CRUSHED_DEEPSLATE = new SedimentaryBlock("crushed_deepslate", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DEEPSLATE_GRAY).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DEEPSLATE_GRAY).finish();
 
         CRUSHED_GRANITE = new SedimentaryBlock("crushed_granite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIRT_BROWN).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIRT_BROWN).finish();
 
         DARK_PRISMARINE_SUBSTRATE = new SedimentaryBlock("dark_prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIAMOND_BLUE).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIAMOND_BLUE).finish();
 
         PRISMARINE_SUBSTRATE = new SedimentaryBlock("prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.CYAN).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.CYAN).finish();
 
         CRIMSON_SAND = new SedimentaryBlock("crimson_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.RED).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.RED).finish();
 
         RUBBLE = new SedimentaryBlock("rubble", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
-                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.RED).finish();
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.RED).finish();
+
+        WARPED_SAND = new SedimentaryBlock("warped_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.CYAN).finish();
     }
 
-        /**
-         * Initializes the block registry
-         */
+    /**
+     * Initializes the block registry
+     */
     public static void initialize() {
         LOGGER.info("[BlockRegistry] Registering blocks...");
     }
