@@ -2,11 +2,13 @@ package coffee.ktty.sedimentary.util;
 
 import coffee.ktty.sedimentary.registry.LocalBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.TagKey;
@@ -273,6 +275,10 @@ public class SedimentaryBlock {
         } else {
             itemSettings =  new FabricItemSettings();
         }
+
+        // Add to building blocks category
+        // todo: configurable category, but default to building blocks
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> entries.add(this.block.asItem()));
 
         Registry.register(Registries.ITEM, id(path), new BlockItem(this.block, itemSettings));
 
