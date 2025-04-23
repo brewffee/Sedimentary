@@ -139,17 +139,27 @@ public class LocalBlocks {
     // Level 1 blocks (Sediments)
     public static final Block CRIMSON_SAND;
     public static final Block CRUSHED_ANDESITE;
+    public static final Block CRUSHED_BLACKSTONE;
     public static final Block CRUSHED_DIORITE;
     public static final Block CRUSHED_DEEPSLATE;
     public static final Block CRUSHED_GRANITE;
     public static final Block DARK_PRISMARINE_SUBSTRATE;
+    public static final Block END_SAND;
     public static final Block PRISMARINE_SUBSTRATE;
     public static final Block RUBBLE;
     public static final Block WARPED_SAND;
 
+    // TODO: CRUSHED_BASALT, CRUSHED_BLACKSTONE, PURPUR_DUST, QUARTZ_DUST
+
     static {
+        CRIMSON_SAND = new SedimentaryBlock("crimson_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+                .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.RED).finish();
+
         CRUSHED_ANDESITE = new SedimentaryBlock("crushed_andesite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.STONE_GRAY).finish();
+
+        CRUSHED_BLACKSTONE = new SedimentaryBlock("crushed_blackstone", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.BLACK).finish();
 
         CRUSHED_DIORITE = new SedimentaryBlock("crushed_diorite", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.OFF_WHITE).finish();
@@ -163,11 +173,11 @@ public class LocalBlocks {
         DARK_PRISMARINE_SUBSTRATE = new SedimentaryBlock("dark_prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.DIAMOND_BLUE).finish();
 
+        END_SAND = new SedimentaryBlock("end_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
+            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.PALE_YELLOW).finish();
+
         PRISMARINE_SUBSTRATE = new SedimentaryBlock("prismarine_substrate", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.CYAN).finish();
-
-        CRIMSON_SAND = new SedimentaryBlock("crimson_sand", GravelBlock.class, Blocks.GRAVEL).model(CUBE_ALL)
-            .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(DyeColor.RED).finish();
 
         RUBBLE = new SedimentaryBlock("rubble", GravelBlock.class, Blocks.SUSPICIOUS_GRAVEL).model(CUBE_ALL)
             .drops(SELF).tags(SHOVEL_MINEABLE).mapColor(MapColor.RED).finish();
